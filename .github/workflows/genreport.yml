@@ -25,6 +25,8 @@ jobs:
             sparse-checkout-cone-mode: false
             
         - name: test command
-          run: 'ls'
+          run: 'ls /CucumberTestNGTestAutomation'
           
+        - name: test command
+          run: 'pwd'
     
