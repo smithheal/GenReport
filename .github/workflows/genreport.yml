@@ -21,7 +21,7 @@ jobs:
           uses: actions/checkout@v3
           with:
             ref: main
-            sparse-checkout: 'TestAutoReport\CucumberTestNGTestAutomation\src\test'
+            sparse-checkout: 'CucumberTestNGTestAutomation/src'
             sparse-checkout-cone-mode: false
             
         - name: test command
