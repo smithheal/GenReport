@@ -32,9 +32,9 @@ jobs:
 
         - name: compile java
           run: |
-            mkdir -p out
-            javac -d out -cp "libs/*" /home/runner/work/GenReport/GenReport/CucumberTestNGTestAutomation/src/test/java/runners/CucumberRunnerTest.java
-            
+            pushd './CucumberTestNGTestAutomation'
+            mvn clean compile
+            mvn test
         - name: run cucumber test
           run: |
             java -cp runners.CucumberRunnerTest
