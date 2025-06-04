@@ -33,7 +33,7 @@ jobs:
         - name: compile java
           run: |
             mkdir -p out
-            javac -d out -cp /home/runner/work/GenReport/GenReport/CucumberTestNGTestAutomation/src/test/java/runners/CucumberRunnerTest.java
+            javac -d out -cp "libs/*" /home/runner/work/GenReport/GenReport/CucumberTestNGTestAutomation/src/test/java/runners/CucumberRunnerTest.java
             
         - name: run cucumber test
           run: |
