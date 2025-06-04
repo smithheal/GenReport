@@ -24,9 +24,19 @@ jobs:
             sparse-checkout: 'CucumberTestNGTestAutomation/src'
             sparse-checkout-cone-mode: false
             
-        - name: test command
+        - name: ls command
           run: 'ls /home/runner/work/GenReport/GenReport/CucumberTestNGTestAutomation'
           
-        - name: test command
+        - name: pwd command
           run: 'pwd'
+
+        - name: compile java
+          run: |
+            mkdir -p out
+            javac -d out -cp src/test/java/runners/CucumberRunnerTest.java
+            
+        - name: run cucumber test
+          run: |
+            java -cp runners.CucumberRunnerTest
+            
     
