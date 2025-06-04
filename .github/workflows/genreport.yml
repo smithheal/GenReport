@@ -1,0 +1,30 @@
+name: Runreport browser launch
+
+on:
+  push: 
+    branches: ["main"]
+  workflow_dispatch:
+  
+jobs:
+    genreport:
+      runs-on: ubuntu-latest
+      steps:
+        - name: test command
+          run: 'pwd'
+
+        - name: setup javasdk
+          uses: actions/setup-java@v1
+          with:
+            java-version: '17'
+
+        - name: checkout code
+          uses: actions/checkout@v3
+          with:
+            ref: main
+            sparse-checkout: 'TestAutoReport\CucumberTestNGTestAutomation\src\test'
+            sparse-checkout-cone-mode: false
+            
+        - name: test command
+          run: 'ls'
+          
+    
